@@ -3,36 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Old_FlightBookingSystem", "FlightBookingSystem\Old_FlightBookingSystem.csproj", "{06B0851D-141A-4C77-B184-80C67088089B}"
+
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBS.PL", "FBS.PL\FBS.PL.csproj", "{685030C0-5274-45F3-A688-FC68F444251A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{EAE37BBE-9949-472E-B384-22B9475DECD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBS.BO", "FBS.BO\FBS.BO.csproj", "{737F7692-2377-4252-B901-4FE0CFD000C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BO", "BLL\BO.csproj", "{BF9E09E5-6FCE-48EE-AF3B-35E5F5163630}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{685030C0-5274-45F3-A688-FC68F444251A}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{06B0851D-141A-4C77-B184-80C67088089B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06B0851D-141A-4C77-B184-80C67088089B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06B0851D-141A-4C77-B184-80C67088089B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06B0851D-141A-4C77-B184-80C67088089B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EAE37BBE-9949-472E-B384-22B9475DECD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EAE37BBE-9949-472E-B384-22B9475DECD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EAE37BBE-9949-472E-B384-22B9475DECD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EAE37BBE-9949-472E-B384-22B9475DECD4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF9E09E5-6FCE-48EE-AF3B-35E5F5163630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF9E09E5-6FCE-48EE-AF3B-35E5F5163630}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF9E09E5-6FCE-48EE-AF3B-35E5F5163630}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF9E09E5-6FCE-48EE-AF3B-35E5F5163630}.Release|Any CPU.Build.0 = Release|Any CPU
-		{685030C0-5274-45F3-A688-FC68F444251A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{685030C0-5274-45F3-A688-FC68F444251A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{685030C0-5274-45F3-A688-FC68F444251A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{685030C0-5274-45F3-A688-FC68F444251A}.Release|Any CPU.Build.0 = Release|Any CPU
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBS.DAL", "FBS.DAL\FBS.DAL.csproj", "{F20A379B-4913-4340-8815-E70EBAF5A463}"
+
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
