@@ -24,23 +24,62 @@ namespace FBS.DAL
             {
                 cnn.Open();
                
-                MySqlCommand cmd = new MySqlCommand("List_Flights",cnn);
+                MySqlCommand cmd = new MySqlCommand("Get_Flights",cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 MySqlDataReader dr = cmd.ExecuteReader();
 
                     while (dr.Read())
                     {
                         FlightModel flight = new FlightModel();
-                        flight.Id = (Guid)dr["Id"];
-                        flight.PlaneId = (Guid)dr["PlaneId"];
-                        flight.DepartureAirport = (Guid)dr["DepartureAirport"];
-                        flight.ArrivalAirport = (Guid)dr["ArrivalAirport"];
+                        flight.Id = Guid.Parse(dr["Id"].ToString());
+                        flight.PlaneId = Guid.Parse(dr["PlaneId"].ToString());
+                        flight.DepartureAirport = (dr["DepartureAirport"].ToString());
+                        flight.ArrivalAirport = (dr["ArrivalAirport"].ToString());
                         flight.DateTime = (DateTime)dr["DateTime"];
                         listFlights.Add(flight);
 
                     }
                 }
                
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot open connection!");
+            }
+            finally
+            {
+                cnn.Close();
+                cnn.Dispose();
+            }
+            return listFlights;
+        }
+
+        public List<FlightModel> GetFlightsFiltered(String DepartureAirport,String ArrivalAirport)
+        {
+            List<FlightModel> listFlights = new List<FlightModel>();
+            MySqlConnection cnn = GetSQLCnn();
+            try
+            {
+                cnn.Open();
+
+                MySqlCommand cmd = new MySqlCommand("Get_Flights_Filtered", cnn);
+                cmd.Parameters.AddWithValue("@DepartureAirportIN",DepartureAirport);
+                cmd.Parameters.AddWithValue("ArrivalAriportIN", ArrivalAirport);
+                cmd.CommandType = CommandType.StoredProcedure;
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    FlightModel flight = new FlightModel();
+                    flight.Id = Guid.Parse(dr["Id"].ToString());
+                    flight.PlaneId = Guid.Parse(dr["PlaneId"].ToString());
+                    flight.DepartureAirport = (dr["DepartureAirport"].ToString());
+                    flight.ArrivalAirport = (dr["ArrivalAirport"].ToString());
+                    flight.DateTime = (DateTime)dr["DateTime"];
+                    listFlights.Add(flight);
+
+                }
+            }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Cannot open connection!");
@@ -69,8 +108,8 @@ namespace FBS.DAL
                 {
                     Flight.Id = (Guid)dr["Id"];
                     Flight.PlaneId = (Guid)dr["PlaneId"];
-                    Flight.DepartureAirport = (Guid)dr["DepartureAirport"];
-                    Flight.ArrivalAirport = (Guid)dr["ArrivalAirport"];
+                    Flight.DepartureAirport =dr["DepartureAirport"].ToString();
+                    Flight.ArrivalAirport = dr["ArrivalAirport"].ToString();
                     Flight.DateTime = (DateTime)dr["DateTime"];
                 }
             }

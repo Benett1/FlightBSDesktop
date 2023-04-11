@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using WindowsFormsApp1;
 namespace PL_FlightBookingSystem
 {
-    partial class Account_SignUp
+    partial class Account
     {
         /// <summary> 
         /// Required designer variable.
@@ -56,7 +56,7 @@ namespace PL_FlightBookingSystem
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label4.Location = new System.Drawing.Point(386, 123);
+            this.label4.Location = new System.Drawing.Point(369, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 21);
             this.label4.TabIndex = 8;
@@ -66,7 +66,7 @@ namespace PL_FlightBookingSystem
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label3.Location = new System.Drawing.Point(386, 51);
+            this.label3.Location = new System.Drawing.Point(369, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 21);
             this.label3.TabIndex = 7;
@@ -76,7 +76,7 @@ namespace PL_FlightBookingSystem
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.Location = new System.Drawing.Point(386, 16);
+            this.label2.Location = new System.Drawing.Point(369, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 21);
             this.label2.TabIndex = 6;
@@ -85,7 +85,7 @@ namespace PL_FlightBookingSystem
             // SinUsernameTxt
             // 
             this.SinUsernameTxt.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.SinUsernameTxt.Location = new System.Drawing.Point(481, 14);
+            this.SinUsernameTxt.Location = new System.Drawing.Point(426, 12);
             this.SinUsernameTxt.Name = "SinUsernameTxt";
             this.SinUsernameTxt.Size = new System.Drawing.Size(175, 29);
             this.SinUsernameTxt.TabIndex = 23;
@@ -93,7 +93,7 @@ namespace PL_FlightBookingSystem
             // SinSurnameTxt
             // 
             this.SinSurnameTxt.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.SinSurnameTxt.Location = new System.Drawing.Point(481, 51);
+            this.SinSurnameTxt.Location = new System.Drawing.Point(426, 49);
             this.SinSurnameTxt.Name = "SinSurnameTxt";
             this.SinSurnameTxt.Size = new System.Drawing.Size(175, 29);
             this.SinSurnameTxt.TabIndex = 24;
@@ -101,7 +101,7 @@ namespace PL_FlightBookingSystem
             // AgeBox
             // 
             this.AgeBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.AgeBox.Location = new System.Drawing.Point(481, 121);
+            this.AgeBox.Location = new System.Drawing.Point(426, 119);
             this.AgeBox.Name = "AgeBox";
             this.AgeBox.Size = new System.Drawing.Size(175, 29);
             this.AgeBox.TabIndex = 26;
@@ -109,7 +109,7 @@ namespace PL_FlightBookingSystem
             // Signup
             // 
             this.Signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Signup.Location = new System.Drawing.Point(466, 176);
+            this.Signup.Location = new System.Drawing.Point(426, 172);
             this.Signup.Name = "Signup";
             this.Signup.Size = new System.Drawing.Size(132, 29);
             this.Signup.TabIndex = 27;
@@ -121,7 +121,7 @@ namespace PL_FlightBookingSystem
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label1.Location = new System.Drawing.Point(386, 87);
+            this.label1.Location = new System.Drawing.Point(369, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 21);
             this.label1.TabIndex = 15;
@@ -130,7 +130,7 @@ namespace PL_FlightBookingSystem
             // SinPasswdTxt
             // 
             this.SinPasswdTxt.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.SinPasswdTxt.Location = new System.Drawing.Point(481, 86);
+            this.SinPasswdTxt.Location = new System.Drawing.Point(426, 84);
             this.SinPasswdTxt.Name = "SinPasswdTxt";
             this.SinPasswdTxt.Size = new System.Drawing.Size(175, 29);
             this.SinPasswdTxt.TabIndex = 25;
@@ -144,7 +144,7 @@ namespace PL_FlightBookingSystem
             // Login
             // 
             this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Login.Location = new System.Drawing.Point(87, 121);
+            this.Login.Location = new System.Drawing.Point(95, 100);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(132, 29);
             this.Login.TabIndex = 22;
@@ -155,7 +155,7 @@ namespace PL_FlightBookingSystem
             // LogPasswordTxt
             // 
             this.LogPasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.LogPasswordTxt.Location = new System.Drawing.Point(133, 63);
+            this.LogPasswordTxt.Location = new System.Drawing.Point(116, 55);
             this.LogPasswordTxt.Name = "LogPasswordTxt";
             this.LogPasswordTxt.Size = new System.Drawing.Size(152, 26);
             this.LogPasswordTxt.TabIndex = 21;
@@ -164,7 +164,7 @@ namespace PL_FlightBookingSystem
             // LogUsernameTxt
             // 
             this.LogUsernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.LogUsernameTxt.Location = new System.Drawing.Point(133, 20);
+            this.LogUsernameTxt.Location = new System.Drawing.Point(116, 16);
             this.LogUsernameTxt.Name = "LogUsernameTxt";
             this.LogUsernameTxt.Size = new System.Drawing.Size(152, 26);
             this.LogUsernameTxt.TabIndex = 20;
@@ -173,7 +173,7 @@ namespace PL_FlightBookingSystem
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(33, 66);
+            this.label5.Location = new System.Drawing.Point(51, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 20);
             this.label5.TabIndex = 19;
@@ -183,13 +183,13 @@ namespace PL_FlightBookingSystem
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(33, 23);
+            this.label6.Location = new System.Drawing.Point(51, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 20);
             this.label6.TabIndex = 18;
             this.label6.Text = "Username";
             // 
-            // Account_SignUp
+            // Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -208,7 +208,7 @@ namespace PL_FlightBookingSystem
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Name = "Account_SignUp";
+            this.Name = "Account";
             this.Size = new System.Drawing.Size(698, 362);
             this.ResumeLayout(false);
             this.PerformLayout();

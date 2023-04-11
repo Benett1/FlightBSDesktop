@@ -18,7 +18,7 @@ namespace FBS.DAL_2.Authentication
             return new MySqlConnection(System.Configuration.ConfigurationSettings.AppSettings.Get("sqlConnection"));
         }
         //login
-        public int Login(String name, String password) {
+        public UserModel Login(String name, String password) {
             MySqlConnection cnn = GetSQLCnn();
             try
             {
@@ -33,8 +33,16 @@ namespace FBS.DAL_2.Authentication
 
                 while (dr.Read())
                 {
-                    return 1;
+                    UserModel model = new UserModel();
+                    model.Id = Guid.Parse(dr["Id"].ToString());
+                    model.Name = dr["Name"].ToString();
+                    model.Surname = dr["Surname"].ToString();
+                    model.Password = dr["Password"].ToString();
+                    model.Age = (int)dr["Age"];
+                    model.RoleId = (int)dr["RoleId"];
+                    return model;
                 }
+                return null;
             }
 
             catch (Exception ex)
@@ -46,10 +54,14 @@ namespace FBS.DAL_2.Authentication
                 cnn.Close();
                 cnn.Dispose();
             }
-            return 0;
+            return null;
         }
         //signupp
         public  int SignUpp(String name, String surname, String password, int age) {
+            if (name == null || surname == null || password == null) {
+                MessageBox.Show("Fill the data correctly");
+                return 0;
+            }
             MySqlConnection cnn = GetSQLCnn();
             try
             {
@@ -71,6 +83,38 @@ namespace FBS.DAL_2.Authentication
             catch (Exception ex)
             {
                 MessageBox.Show("Cannot open connection!");
+            }
+            finally
+            {
+                cnn.Close();
+                cnn.Dispose();
+            }
+            return 0;
+        }
+
+        public int Update_User(UserModel user)
+        {
+            MySqlConnection cnn = GetSQLCnn();
+            try
+            {
+                cnn.Open();
+
+                MySqlCommand cmd = new MySqlCommand("Update_User", cnn);
+                cmd.Parameters.AddWithValue("@id", user.Id.ToString());
+                cmd.Parameters.AddWithValue("@name", user.Name);
+                cmd.Parameters.AddWithValue("@surname", user.Surname);
+                cmd.Parameters.AddWithValue("@age", user.Age);
+                cmd.Parameters.AddWithValue("@password", user.Password);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteReader();
+
+                return 1;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot open connection!" + ex);
+                
             }
             finally
             {

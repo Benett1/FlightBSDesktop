@@ -8,8 +8,8 @@ namespace FlightBookingSystem.Models
 
 
         public Guid PlaneId { get; set; }
-        public Guid DepartureAirport { get; set; }
-        public Guid ArrivalAirport { get; set; }
+        public String DepartureAirport { get; set; }
+        public String ArrivalAirport { get; set; }
         public DateTime DateTime { get; set; }
 
     }
