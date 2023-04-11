@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-using WindowsFormsApp1.CustomViews;
 
 namespace WindowsFormsApp1
 {
@@ -31,7 +30,6 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -43,18 +41,20 @@ namespace WindowsFormsApp1
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.accInfo1 = new WindowsFormsApp1.CustomViews.AccInfo();
-            this.account_SignUp1 = new PL_FlightBookingSystem.Account_SignUp();
+            this.BackBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.flightCard1 = new WindowsFormsApp1.CustomViews.FlightCard();
-            this.flightCard2 = new WindowsFormsApp1.CustomViews.FlightCard();
+            this.Signup = new System.Windows.Forms.Button();
+            this.Login = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.account_SignUp1 = new PL_FlightBookingSystem.Account_SignUp();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(911, 625);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(911, 525);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tabControl1
@@ -81,15 +81,13 @@ namespace WindowsFormsApp1
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(905, 619);
+            this.tabControl1.Size = new System.Drawing.Size(905, 519);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tabPage1.BackColor = System.Drawing.Color.CadetBlue;
-            this.tabPage1.Controls.Add(this.flightCard2);
-            this.tabPage1.Controls.Add(this.flightCard1);
+            this.tabPage1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.comboBox2);
             this.tabPage1.Controls.Add(this.comboBox1);
@@ -98,7 +96,7 @@ namespace WindowsFormsApp1
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(897, 593);
+            this.tabPage1.Size = new System.Drawing.Size(897, 493);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dashboard";
             // 
@@ -116,9 +114,6 @@ namespace WindowsFormsApp1
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Shkup",
-            "Prishtine"});
             this.comboBox2.Location = new System.Drawing.Point(495, 54);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(153, 28);
@@ -128,9 +123,6 @@ namespace WindowsFormsApp1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Prishtine",
-            "Shkup"});
             this.comboBox1.Location = new System.Drawing.Point(206, 54);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 28);
@@ -158,29 +150,27 @@ namespace WindowsFormsApp1
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage2.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(897, 593);
+            this.tabPage2.Size = new System.Drawing.Size(897, 493);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Bookings";
+            this.tabPage2.Text = "Settings";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label2.Location = new System.Drawing.Point(378, 27);
+            this.label2.Location = new System.Drawing.Point(280, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 25);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Bookings";
+            this.label2.Text = "label2";
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.CadetBlue;
-            this.tabPage3.Controls.Add(this.accInfo1);
+            this.tabPage3.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tabPage3.Controls.Add(this.account_SignUp1);
             this.tabPage3.Controls.Add(this.BackBtn);
             this.tabPage3.Controls.Add(this.label6);
@@ -193,65 +183,105 @@ namespace WindowsFormsApp1
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(897, 593);
+            this.tabPage3.Size = new System.Drawing.Size(897, 493);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Account";
             // 
-            // accInfo1
+            // BackBtn
             // 
-            this.accInfo1.BackColor = System.Drawing.Color.CadetBlue;
-            this.accInfo1.Location = new System.Drawing.Point(117, 68);
-            this.accInfo1.Name = "accInfo1";
-            this.accInfo1.Size = new System.Drawing.Size(698, 362);
-            this.accInfo1.TabIndex = 17;
-            this.accInfo1.Hide();
-            GlobalState.setInstance(this.accInfo1);
-            // 
-            // account_SignUp1
-            // 
-            this.account_SignUp1.BackColor = System.Drawing.Color.CadetBlue;
-            this.account_SignUp1.Location = new System.Drawing.Point(99, 76);
-            this.account_SignUp1.Name = "account_SignUp1";
-            this.account_SignUp1.Size = new System.Drawing.Size(698, 362);
-            this.account_SignUp1.TabIndex = 16;
+            this.BackBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.BackBtn.Location = new System.Drawing.Point(13, 11);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(39, 36);
+            this.BackBtn.TabIndex = 15;
+            this.BackBtn.Text = "<";
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Visible = false;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label6.Location = new System.Drawing.Point(395, 26);
+            this.label6.Location = new System.Drawing.Point(403, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 25);
             this.label6.TabIndex = 6;
             this.label6.Text = "Account";
             // 
-            // flightCard1
+            // Signup
             // 
-            this.flightCard1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.flightCard1.Location = new System.Drawing.Point(144, 161);
-            this.flightCard1.Name = "flightCard1";
-            this.flightCard1.Size = new System.Drawing.Size(623, 141);
-            this.flightCard1.TabIndex = 5;
+            this.Signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Signup.Location = new System.Drawing.Point(383, 224);
+            this.Signup.Name = "Signup";
+            this.Signup.Size = new System.Drawing.Size(132, 29);
+            this.Signup.TabIndex = 5;
+            this.Signup.Text = "Sign up";
+            this.Signup.UseVisualStyleBackColor = true;
+            this.Signup.Click += new System.EventHandler(this.Signup_Click);
             // 
-            // flightCard2
+            // Login
             // 
-            this.flightCard2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.flightCard2.Location = new System.Drawing.Point(144, 331);
-            this.flightCard2.Name = "flightCard2";
-            this.flightCard2.Size = new System.Drawing.Size(623, 141);
-            this.flightCard2.TabIndex = 6;
+            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Login.Location = new System.Drawing.Point(383, 189);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(132, 29);
+            this.Login.TabIndex = 4;
+            this.Login.Text = "Login";
+            this.Login.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox2.Location = new System.Drawing.Point(398, 138);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(152, 26);
+            this.textBox2.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox1.Location = new System.Drawing.Point(398, 95);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(152, 26);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Location = new System.Drawing.Point(298, 141);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Password";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Location = new System.Drawing.Point(298, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Username";
+            // 
+            // account_SignUp1
+            // 
+            this.account_SignUp1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.account_SignUp1.Location = new System.Drawing.Point(170, 55);
+            this.account_SignUp1.Name = "account_SignUp1";
+            this.account_SignUp1.Size = new System.Drawing.Size(562, 362);
+            this.account_SignUp1.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(911, 625);
+            this.ClientSize = new System.Drawing.Size(911, 525);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
-            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Flight Booking System";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -262,7 +292,6 @@ namespace WindowsFormsApp1
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,12 +309,15 @@ namespace WindowsFormsApp1
         private TabPage tabPage2;
         private Label label2;
         private TabPage tabPage3;
-        private Label label6;
-        private BindingSource bindingSource1;
+        private Button BackBtn;
         private PL_FlightBookingSystem.Account_SignUp account_SignUp1;
-        private CustomViews.AccInfo accInfo1;
-        private FlightCard flightCard2;
-        private FlightCard flightCard1;
+        private Label label6;
+        private Button Signup;
+        private Button Login;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Label label5;
+        private Label label4;
     }
 }
 

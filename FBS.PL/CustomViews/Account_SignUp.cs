@@ -30,8 +30,8 @@ namespace PL_FlightBookingSystem
                 GlobalState.GetInstance("accInfo1").Show();
             } else {
                 MessageBox.Show("Problem while Loggin in");
-            }
-           
+        }
+
 
         }
     }

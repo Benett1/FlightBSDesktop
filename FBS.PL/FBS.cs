@@ -13,5 +13,10 @@ namespace WindowsFormsApp1
            // account_SignUp1.Hide();
         }
 
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            account_SignUp1.Hide();
+            BackBtn.Visible = false;
+        }
     }
 }
