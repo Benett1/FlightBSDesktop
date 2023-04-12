@@ -67,12 +67,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomViews\Account_SignUp.cs">
+    <Compile Include="CustomViews\AccInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomViews\Account_SignUp.Designer.cs">
-      <DependentUpon>Account_SignUp.cs</DependentUpon>
+    <Compile Include="CustomViews\AccInfo.Designer.cs">
+      <DependentUpon>AccInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomViews\Account.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomViews\Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomViews\FlightCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomViews\FlightCard.Designer.cs">
+      <DependentUpon>FlightCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalState.cs" />
     <Compile Include="FBS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,8 +94,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CustomViews\Account_SignUp.resx">
-      <DependentUpon>Account_SignUp.cs</DependentUpon>
+    <EmbeddedResource Include="CustomViews\AccInfo.resx">
+      <DependentUpon>AccInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\FlightCard.resx">
+      <DependentUpon>FlightCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FBS.resx">
       <DependentUpon>FBS.cs</DependentUpon>

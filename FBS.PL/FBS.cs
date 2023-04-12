@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using FBS.DAL;
+using FBS.DAL_2.Authentication;
+using FlightBookingSystem.Models;
+using WindowsFormsApp1.CustomViews;
 
 namespace WindowsFormsApp1
 {
@@ -9,25 +13,35 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-            account_SignUp1.Hide();
+            List<FlightModel> fmodel = new DLFlights().GetFlights();
 
+
+            foreach (FlightModel flight in fmodel)
+            {
+
+                flowLayoutPanel.Controls.Add(new FlightCard(flight));
+            }
 
         }
 
-        private void Signup_Click(object sender, EventArgs e)
+        private void flowLayoutPanel_Paint(object sender, PaintEventArgs e)
         {
-            account_SignUp1.Show();
-            BackBtn.Visible = true;
+           
 
-            DLFlights bLL = new DLFlights();
-
-            MessageBox.Show(bLL.GetFlights().ToString());
         }
 
-        private void BackBtn_Click(object sender, EventArgs e)
+        private void searchFlightBtn_Click(object sender, EventArgs e)
         {
-            account_SignUp1.Hide();
-            BackBtn.Visible = false;
+            var depAeroport = depatureBox.Text.Trim();
+            var arrivalAirport = arrivalBox.Text.Trim();
+
+            List<FlightModel> fmodel = new DLFlights().GetFlightsFiltered(depAeroport,arrivalAirport);
+
+            flowLayoutPanel.Controls.Clear();
+            foreach (FlightModel flight in fmodel)
+            {
+                flowLayoutPanel.Controls.Add(new FlightCard(flight));
+            }
         }
     }
 }

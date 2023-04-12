@@ -1,15 +1,19 @@
-﻿using System;
+﻿using FlightBookingSystem.Models;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics.PerformanceData;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace PL_FlightBookingSystem
+namespace WindowsFormsApp1.CustomViews
 {
     internal static class GlobalState
     {
-        public static int Logged { get; set; } 
+        public static bool Logged { get; set; }
+        public static bool Painted { get; set; } = false;
+        public static UserModel user { get; set; }
+
         public static List<UserControl> StateInstances = new List<UserControl>();
 
         public static UserControl GetInstance(string name)
@@ -17,7 +21,8 @@ namespace PL_FlightBookingSystem
             return StateInstances.First(e => e.Name == name);
         }
 
-        public static void setInstance(UserControl userControl) {
+        public static void setInstance(UserControl userControl)
+        {
             StateInstances.Add(userControl);
         }
     }
