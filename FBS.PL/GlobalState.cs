@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FBS.DAL;
+using FBS.DAL.Locations;
+using FBS.DAL.Aeroports;
 
 namespace WindowsFormsApp1.CustomViews
 {
@@ -15,6 +18,29 @@ namespace WindowsFormsApp1.CustomViews
         public static UserModel user { get; set; }
 
         public static List<UserControl> StateInstances = new List<UserControl>();
+        public static List<TabControl> tabControls = new List<TabControl>();
+        public static List<LocationModel> Locations = new List<LocationModel>( new DAOLocatinos().AllLocations());
+        public static List<AirportModel> Airports = new List<AirportModel>( new DAOAiroports().GetAeroports());
+        public static TabPage tabPage = new TabPage();
+
+        public static void setTabFlights(TabPage tab)
+        {
+            tabPage = tab;
+        }
+
+        public static TabPage getTabFlights()
+        {
+            return tabPage;
+        }
+
+        public static void setTab(TabControl tab){
+            tabControls.Add(tab);
+        }
+
+        public static TabControl getTab(String tab)
+        {
+            return tabControls.First(e => e.Name == tab);
+        }
 
         public static UserControl GetInstance(string name)
         {

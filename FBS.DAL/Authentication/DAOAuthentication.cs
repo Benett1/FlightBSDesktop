@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FBS.DAL_2.Authentication
 {
-    public class DLAuthentication
+    public class DAOAuthentication
     {
         public  MySqlConnection GetSQLCnn()
         {

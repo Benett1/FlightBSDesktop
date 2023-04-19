@@ -13,7 +13,18 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-            List<FlightModel> fmodel = new DLFlights().GetFlights();
+
+            List<String> loc = new List<String>();
+            loc.Add("");
+
+            foreach (LocationModel el in GlobalState.Locations)
+            {
+                loc.Add(el.City);
+            }
+
+            depatureBox.Items.AddRange(loc.ToArray());
+            arrivalBox.Items.AddRange(loc.ToArray());
+            List<FlightModel> fmodel = new DAOFlights().GetFlights();
 
 
             foreach (FlightModel flight in fmodel)
@@ -32,16 +43,38 @@ namespace WindowsFormsApp1
 
         private void searchFlightBtn_Click(object sender, EventArgs e)
         {
-            var depAeroport = depatureBox.Text.Trim();
+            var depAiroport = depatureBox.Text.Trim();
             var arrivalAirport = arrivalBox.Text.Trim();
+            List<FlightModel> fmodel;
 
-            List<FlightModel> fmodel = new DLFlights().GetFlightsFiltered(depAeroport,arrivalAirport);
+            if (depAiroport.Equals("") || arrivalAirport.Equals("")){
+               fmodel = new DAOFlights().GetFlights();
+            }
+            else {
+               fmodel = new DAOFlights().GetFlightsFiltered(depAiroport, arrivalAirport);
+            }
+            
 
             flowLayoutPanel.Controls.Clear();
             foreach (FlightModel flight in fmodel)
             {
                 flowLayoutPanel.Controls.Add(new FlightCard(flight));
             }
+        }
+
+        private void accInfo1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Signup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void account1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

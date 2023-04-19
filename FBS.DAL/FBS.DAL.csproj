@@ -174,9 +174,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Authentication\DLAuthentication.cs" />
-    <Compile Include="Flights\DLFlights.cs" />
+    <Compile Include="Airoports\DAOAiroports.cs" />
+    <Compile Include="Authentication\DAOAuthentication.cs" />
+    <Compile Include="Flights\DAOFlights.cs" />
     <Compile Include="Flights\I_Flights.cs" />
+    <Compile Include="Locations\DAOLocatinos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

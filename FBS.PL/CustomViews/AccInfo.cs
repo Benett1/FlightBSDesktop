@@ -14,11 +14,11 @@ namespace WindowsFormsApp1.CustomViews
 {
     public partial class AccInfo : UserControl
     {
-        private DLAuthentication dLAuthentication { get; set; }
+        private DAOAuthentication dLAuthentication { get; set; }
         public AccInfo()
         {
             InitializeComponent();
-            dLAuthentication = new DLAuthentication();
+            dLAuthentication = new DAOAuthentication();
             try {
                 UserModel model = GlobalState.user;
                 nameTxt.Text = model.Name;
@@ -38,6 +38,10 @@ namespace WindowsFormsApp1.CustomViews
                 GlobalState.Painted = false;
                 GlobalState.GetInstance("accInfo1").Hide();
                 GlobalState.GetInstance("account_SignUp1").Show();
+
+                TabControl flightsTab = GlobalState.getTab("flightsTab");
+                flightsTab.TabPages.Remove(GlobalState.getTabFlights());
+                
             }
         }
 

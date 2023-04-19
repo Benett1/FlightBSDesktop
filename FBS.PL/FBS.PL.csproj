@@ -85,6 +85,12 @@
     <Compile Include="CustomViews\FlightCard.Designer.cs">
       <DependentUpon>FlightCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomViews\Signup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomViews\Signup.Designer.cs">
+      <DependentUpon>Signup.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalState.cs" />
     <Compile Include="FBS.cs">
       <SubType>Form</SubType>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomViews\FlightCard.resx">
       <DependentUpon>FlightCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\Signup.resx">
+      <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FBS.resx">
       <DependentUpon>FBS.cs</DependentUpon>

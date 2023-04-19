@@ -8,8 +8,8 @@ namespace FBS.DAL
     {
         List<FlightModel> GetFlights();
         FlightModel GetFlightById(Guid Id);
-        void AddFlight(FlightModel flightModel);
-        void UpdateFlight(FlightModel flightModel);
+        void AddFlight(FlightModel flightModel, Guid dep, Guid arr);
+        void UpdateFlight(FlightModel flightModel, Guid dep, Guid arr);
         void DeleteFlight(Guid Id);
     }
 }

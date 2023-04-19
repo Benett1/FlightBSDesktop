@@ -119,6 +119,7 @@
             // 
             // roleTxt
             // 
+            this.roleTxt.Enabled = false;
             this.roleTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.roleTxt.Location = new System.Drawing.Point(278, 165);
             this.roleTxt.Name = "roleTxt";
