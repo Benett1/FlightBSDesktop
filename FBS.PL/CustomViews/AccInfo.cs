@@ -1,24 +1,17 @@
 ﻿using FBS.DAL_2.Authentication;
 using FlightBookingSystem.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.CustomViews
 {
     public partial class AccInfo : UserControl
     {
-        private DLAuthentication dLAuthentication { get; set; }
+        private DAOAuthentication dLAuthentication { get; set; }
         public AccInfo()
         {
             InitializeComponent();
-            dLAuthentication = new DLAuthentication();
+            dLAuthentication = new DAOAuthentication();
             try {
                 UserModel model = GlobalState.user;
                 nameTxt.Text = model.Name;
@@ -38,6 +31,12 @@ namespace WindowsFormsApp1.CustomViews
                 GlobalState.Painted = false;
                 GlobalState.GetInstance("accInfo1").Hide();
                 GlobalState.GetInstance("account_SignUp1").Show();
+                GlobalState.BookingLayout.Controls.Clear();
+                GlobalState.bookingPainted = false;
+
+                TabControl flightsTab = GlobalState.getTab("flightsTab");
+                flightsTab.TabPages.Remove(GlobalState.getTabFlights());
+                
             }
         }
 
