@@ -79,6 +79,18 @@
     <Compile Include="CustomViews\Account.Designer.cs">
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomViews\BookingCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomViews\BookingCard.Designer.cs">
+      <DependentUpon>BookingCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomViews\BookingPannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomViews\BookingPannel.Designer.cs">
+      <DependentUpon>BookingPannel.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomViews\FlightCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +118,12 @@
     <EmbeddedResource Include="CustomViews\Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\BookingCard.resx">
+      <DependentUpon>BookingCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\BookingPannel.resx">
+      <DependentUpon>BookingPannel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomViews\FlightCard.resx">
       <DependentUpon>FlightCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +131,9 @@
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FBS.resx">
+      <DependentUpon>FBS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBS.sq-XK.resx">
       <DependentUpon>FBS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,25 +1,16 @@
-﻿using FlightBookingSystem.Models;
+﻿using FBS.DAL;
+using FlightBookingSystem.Models;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FBS.DAL_2.Authentication
 {
     public class DAOAuthentication
     {
-        public  MySqlConnection GetSQLCnn()
-        {
-            return new MySqlConnection(System.Configuration.ConfigurationSettings.AppSettings.Get("sqlConnection"));
-        }
-        //login
         public UserModel Login(String name, String password) {
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();
@@ -62,7 +53,7 @@ namespace FBS.DAL_2.Authentication
                 MessageBox.Show("Fill the data correctly");
                 return 0;
             }
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();
@@ -94,7 +85,7 @@ namespace FBS.DAL_2.Authentication
 
         public int Update_User(UserModel user)
         {
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();

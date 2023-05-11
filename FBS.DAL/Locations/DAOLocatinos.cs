@@ -12,14 +12,10 @@ namespace FBS.DAL.Locations
 {
     public class DAOLocatinos
     {
-        public static MySqlConnection GetSQLCnn()
-        {
-            return new MySqlConnection(System.Configuration.ConfigurationSettings.AppSettings.Get("sqlConnection"));
-        }
         public List<LocationModel> AllLocations() {
 
             List<LocationModel> locations = new List<LocationModel>();
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();

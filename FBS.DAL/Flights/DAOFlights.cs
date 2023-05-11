@@ -12,15 +12,11 @@ namespace FBS.DAL
 {
     public class DAOFlights : I_Flights
     {
-        public static MySqlConnection GetSQLCnn()
-        {
-            return new MySqlConnection(System.Configuration.ConfigurationSettings.AppSettings.Get("sqlConnection"));
-        }
 
         public List<FlightModel> GetFlights()
         {
             List<FlightModel> listFlights = new List<FlightModel>();
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();
@@ -57,7 +53,7 @@ namespace FBS.DAL
         public List<String> GetFlightsId(int AirlinesId)
         {
             List<String> listFlights = new List<String>();
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();
@@ -89,7 +85,7 @@ namespace FBS.DAL
         public List<String> GetFlightsByRole (int roleId)
         {
             List<String> listFlights = new List<String>();
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();
@@ -121,7 +117,7 @@ namespace FBS.DAL
         public List<FlightModel> GetFlightsFiltered(String DepartureAirport,String ArrivalAirport)
         {
             List<FlightModel> listFlights = new List<FlightModel>();
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();
@@ -159,12 +155,13 @@ namespace FBS.DAL
         public FlightModel GetFlightById(Guid Id)
         {
             FlightModel Flight = new FlightModel();
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("Get_Flight("+Id+")", cnn);
+                MySqlCommand cmd = new MySqlCommand("Get_Flight", cnn);
+                cmd.Parameters.AddWithValue("FlightId", Id.ToString());
                 cmd.CommandType = CommandType.StoredProcedure;
                 MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -193,7 +190,7 @@ namespace FBS.DAL
         public void AddFlight(FlightModel flightModel, Guid dep, Guid arr)
         {
             FlightModel Flight = new FlightModel();
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();
@@ -222,8 +219,8 @@ namespace FBS.DAL
 
         public void UpdateFlight(FlightModel flightModel, Guid dep, Guid arr)
         {
-            MySqlConnection cnn = GetSQLCnn();
-            
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
+
             try
             {
                 cnn.Open();
@@ -252,7 +249,7 @@ namespace FBS.DAL
         public void DeleteFlight(Guid Id)
         {
             FlightModel Flight = new FlightModel();
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();

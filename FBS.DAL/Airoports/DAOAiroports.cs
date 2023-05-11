@@ -12,15 +12,12 @@ namespace FBS.DAL.Aeroports
 {
     public class DAOAiroports
     {
-        public static MySqlConnection GetSQLCnn()
-        {
-            return new MySqlConnection(System.Configuration.ConfigurationSettings.AppSettings.Get("sqlConnection"));
-        }
+
         public List<AirportModel> GetAeroports()
         {
 
             List<AirportModel> airports = new List<AirportModel>();
-            MySqlConnection cnn = GetSQLCnn();
+            MySqlConnection cnn = SqlConnection.GetSQLCnn();
             try
             {
                 cnn.Open();

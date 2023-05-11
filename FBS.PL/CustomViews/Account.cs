@@ -51,10 +51,10 @@ namespace PL_FlightBookingSystem
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            // Perform whatever action you want to take when the user clicks the Submit button
-
-            // Hide the pop-up panel
             popupPanel.Visible = false;
+            FlightBox.Controls.Clear();
+            FlightBox.Items.AddRange(daoFlights.GetFlightsByRole(GlobalState.user.RoleId).ToArray());
+
         }
 
         private void RegisterFlight_Click(object sender, EventArgs e) {
@@ -73,9 +73,22 @@ namespace PL_FlightBookingSystem
                 }
                 else
                 {
+
                     model.Id = Guid.NewGuid();
-                    daoFlights.AddFlight(model, depId,arrId);
+                    daoFlights.AddFlight(model, depId, arrId);
+
+                    FlightBox.Controls.Clear();
+                    FlightBox.Items.AddRange(daoFlights.GetFlightsByRole(GlobalState.user.RoleId).ToArray());
+
+                    GlobalState.HomeLayout.Controls.Clear();
+                    List<FlightModel> fmodel = new DAOFlights().GetFlights();
+
+                    foreach (FlightModel flight in fmodel)
+                    {
+                        GlobalState.HomeLayout.Controls.Add(new FlightCard(flight));
+                    }
                 }
+       
             }
             catch(Exception ex) {
                 MessageBox.Show("Fill the data");
@@ -131,7 +144,6 @@ namespace PL_FlightBookingSystem
             }
 
         }
-
 
         private Label DDepartureLbl;
         private Label FflightLbl;
@@ -290,7 +302,8 @@ namespace PL_FlightBookingSystem
                     dateTimePicker2.Location = new System.Drawing.Point(466, 251);
                     dateTimePicker2.Name = "dateTimePicker2";
                     dateTimePicker2.Format = DateTimePickerFormat.Custom;
-                    dateTimePicker2.CustomFormat = "MM/dd/yyyy hh:mm"; // Use the desired date/time format
+                    dateTimePicker2.CustomFormat = "MM/dd/yyyy hh:mm";
+                    dateTimePicker2.MinDate = DateTime.Today;
 
 
                     // 
@@ -330,9 +343,6 @@ namespace PL_FlightBookingSystem
                     DeleteBtn.UseVisualStyleBackColor = true;
                     DeleteBtn.Click += new System.EventHandler(this.DeleteFLightsById);
 
-                    
-
-
 
                     tabPage4.Controls.Add(DDepartureLbl);
                     tabPage4.Controls.Add(DepartureBox);
@@ -349,8 +359,6 @@ namespace PL_FlightBookingSystem
                     tabPage4.Controls.Add(UUpdate);
                     tabPage4.Controls.Add(DeleteBtn);
 
-                   
-
                     List<String> list = new List<String>();
 
                     foreach (var el in GlobalState.Locations) {
@@ -360,6 +368,8 @@ namespace PL_FlightBookingSystem
                     DepartureBox.Items.AddRange(list.ToArray());
                     AArrivalBox.Items.AddRange(list.ToArray());
 
+                    FlightBox.Items.Clear();
+                    FlightBox.Items.AddRange(daoFlights.GetFlightsByRole(GlobalState.user.RoleId).ToArray());
                     PPlaneBox.Items.AddRange(daoFlights.GetFlightsId(GlobalState.user.RoleId).ToArray());
 
                     updateDropFlights();
@@ -371,9 +381,7 @@ namespace PL_FlightBookingSystem
 
             } else {
                 MessageBox.Show("Problem while Loggin in");
-        }
-
-
+            }
         }
 
         private void updateDropFlights()

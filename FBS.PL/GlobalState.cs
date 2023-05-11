@@ -15,6 +15,7 @@ namespace WindowsFormsApp1.CustomViews
     {
         public static bool Logged { get; set; }
         public static bool Painted { get; set; } = false;
+        public static bool bookingPainted { get; set; } = false;
         public static UserModel user { get; set; }
 
         public static List<UserControl> StateInstances = new List<UserControl>();
@@ -22,6 +23,8 @@ namespace WindowsFormsApp1.CustomViews
         public static List<LocationModel> Locations = new List<LocationModel>( new DAOLocatinos().AllLocations());
         public static List<AirportModel> Airports = new List<AirportModel>( new DAOAiroports().GetAeroports());
         public static TabPage tabPage = new TabPage();
+        public static FlowLayoutPanel BookingLayout { get; set; }
+        public static FlowLayoutPanel HomeLayout { get; set; }
 
         public static void setTabFlights(TabPage tab)
         {

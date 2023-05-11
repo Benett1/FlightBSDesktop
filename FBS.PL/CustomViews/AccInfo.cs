@@ -1,13 +1,6 @@
 ﻿using FBS.DAL_2.Authentication;
 using FlightBookingSystem.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.CustomViews
@@ -38,6 +31,8 @@ namespace WindowsFormsApp1.CustomViews
                 GlobalState.Painted = false;
                 GlobalState.GetInstance("accInfo1").Hide();
                 GlobalState.GetInstance("account_SignUp1").Show();
+                GlobalState.BookingLayout.Controls.Clear();
+                GlobalState.bookingPainted = false;
 
                 TabControl flightsTab = GlobalState.getTab("flightsTab");
                 flightsTab.TabPages.Remove(GlobalState.getTabFlights());

@@ -176,10 +176,13 @@
   <ItemGroup>
     <Compile Include="Airoports\DAOAiroports.cs" />
     <Compile Include="Authentication\DAOAuthentication.cs" />
+    <Compile Include="Bookings\DAOBookings.cs" />
+    <Compile Include="EmailProvider.cs" />
     <Compile Include="Flights\DAOFlights.cs" />
     <Compile Include="Flights\I_Flights.cs" />
     <Compile Include="Locations\DAOLocatinos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlConnection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

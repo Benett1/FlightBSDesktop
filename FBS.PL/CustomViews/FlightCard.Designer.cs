@@ -37,6 +37,7 @@
             this.arrivalLbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.flightLbl = new System.Windows.Forms.Label();
+            this.bookBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -122,11 +123,22 @@
             this.flightLbl.TabIndex = 8;
             this.flightLbl.Text = "label6";
             // 
+            // bookBtn
+            // 
+            this.bookBtn.Location = new System.Drawing.Point(224, 78);
+            this.bookBtn.Name = "bookBtn";
+            this.bookBtn.Size = new System.Drawing.Size(75, 23);
+            this.bookBtn.TabIndex = 9;
+            this.bookBtn.Text = "Book";
+            this.bookBtn.UseVisualStyleBackColor = true;
+            this.bookBtn.Click += new System.EventHandler(this.bookBtn_Click);
+            // 
             // FlightCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Controls.Add(this.bookBtn);
             this.Controls.Add(this.flightLbl);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.arrivalLbl);
@@ -155,5 +167,6 @@
         private System.Windows.Forms.Label arrivalLbl;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label flightLbl;
+        private System.Windows.Forms.Button bookBtn;
     }
 }
